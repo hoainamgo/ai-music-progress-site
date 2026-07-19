@@ -1,0 +1,49 @@
+{
+  "updated": "2026-07-19 16:43:11",
+  "drive_root": "1Mi4H7-iRGbncp_kL7dm7Wh6BfoIUdDC6",
+  "drive_cat": "1jLiY1GSThkYwQz-WukqRGP_s6ZXrUJvN",
+  "sessions": [
+    {
+      "label": "Session 1 — Rewrite Catalog",
+      "total": 100,
+      "gen": 10,
+      "dl": 10,
+      "pct": 10,
+      "dl_pct": 10,
+      "lang": "VN còn 18 bài",
+      "themes": {
+        "Late Night Drive": 10,
+        "Healing After Goodbye": 10,
+        "City Lights / Neon": 10,
+        "First Love Flashback": 10,
+        "Self-Love / Empowerment": 10,
+        "Missing You (Distance)": 10,
+        "Summer Memory": 10,
+        "Quiet Strength": 10,
+        "Dance-Floor Liberation": 10,
+        "Letter to My Younger Self": 10
+      }
+    },
+    {
+      "label": "Session 2 — Melody v2 (EN)",
+      "total": 100,
+      "gen": 10,
+      "dl": 0,
+      "pct": 10,
+      "dl_pct": 0,
+      "lang": "EN 100%",
+      "themes": {
+        "Yêu thương (Tender Love)": 10,
+        "Chữa lành (Healing)": 10,
+        "Gia đình & Kết nối (Family & Connection)": 10,
+        "Tình bạn (Friendship)": 10,
+        "Tự yêu bản thân (Self-Love)": 10,
+        "Hy vọng & Ánh sáng (Hope & Light)": 10,
+        "Kỷ niệm & Hoài niệm (Memory & Nostalgia)": 10,
+        "Bình yên & Chánh niệm (Peace & Mindfulness)": 10,
+        "Vượt qua & Dũng cảm (Overcome & Brave)": 10,
+        "Niềm vui & Celebrate (Joy & Celebrate)": 10
+      }
+    }
+  ]
+}
