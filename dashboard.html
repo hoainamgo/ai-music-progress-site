@@ -12,17 +12,26 @@ th,td{padding:6px 8px;border-bottom:1px solid #2a2d35;text-align:left}
 th{background:#1a1d24;color:#ff6f91;position:sticky;top:0}
 tr:hover{background:#1a1d24}
 .refr{float:right;font-size:12px;color:#888}
+.tabs{padding:0 24px}
+.tab{display:inline-block;padding:8px 14px;margin-right:4px;background:#1a1d24;border-radius:8px 8px 0 0;cursor:pointer;color:#aaa}
+.tab.on{color:#ff6f91;border-bottom:2px solid #ff6f91}
 </style></head><body>
-<header><h1>🎵 AI Music Project — 200 Bài (Pop-R&B · US)</h1>
-<span class="refr">auto-scan 200 bài · 11 audio · 10 thumb · 10 video</span></header>
+<header><h1>🎵 AI Music Project — 210 Bài (Pop-R&B + His Glory · US)</h1>
+<span class="refr">auto-scan 210 bài · 21 audio · 10 thumb · 10 video</span></header>
 <div class="kpis">
-<div class="kpi"><b>200</b>Tổng bài</div>
-<div class="kpi"><b>11</b>Có audio</div>
+<div class="kpi"><b>210</b>Tổng bài</div>
+<div class="kpi"><b>21</b>Có audio</div>
 <div class="kpi"><b>10</b>Có thumbnail</div>
 <div class="kpi"><b>10</b>Có video</div>
 <div class="kpi"><b>7</b>BG loop</div>
 </div>
-<table><thead><tr><th></th><th>ID</th><th>Title</th><th>Theme</th><th>Mood</th><th>BPM</th><th>Audio</th><th>Thumb</th><th>Video</th></tr></thead>
+<div class="tabs">
+<span class="tab on" onclick="f('all')">All</span>
+<span class="tab" onclick="f('S1')">S1</span>
+<span class="tab" onclick="f('S2')">S2</span>
+<span class="tab" onclick="f('HG')">His Glory</span>
+</div>
+<table id="t"><thead><tr><th></th><th>ID</th><th>Title</th><th>Theme</th><th>Mood</th><th>BPM</th><th>Audio</th><th>Thumb</th><th>Video</th></tr></thead>
 <tbody><tr>
 <td>🎵</td><td>S1#01</td><td>Midnight Mile</td>
 <td>Late Night Drive</td><td>wistful</td><td>109</td>
@@ -1223,5 +1232,68 @@ tr:hover{background:#1a1d24}
 <td>—</td>
 <td>—</td>
 <td>—</td></tr>
+<tr>
+<td>🎵</td><td>HG#01</td><td>The Dragon Falls</td>
+<td></td><td>defiant triumphant</td><td>120</td>
+<td>🎵song_01_the_dragon_falls.mp3</td>
+<td>—</td>
+<td>—</td></tr>
+<tr>
+<td>🎵</td><td>HG#02</td><td>Worthy the Name</td>
+<td></td><td>reverent awestruck</td><td>72</td>
+<td>🎵song_02_worthy_the_name.mp3</td>
+<td>—</td>
+<td>—</td></tr>
+<tr>
+<td>🎵</td><td>HG#03</td><td>Rise Like the Dawn</td>
+<td></td><td>empowering anthemic</td><td>140</td>
+<td>🎵song_03_rise_like_the_dawn.mp3</td>
+<td>—</td>
+<td>—</td></tr>
+<tr>
+<td>🎵</td><td>HG#04</td><td>Revelation Twelve</td>
+<td></td><td>cinematic solemn</td><td>100</td>
+<td>🎵song_04_revelation_twelve.mp3</td>
+<td>—</td>
+<td>—</td></tr>
+<tr>
+<td>🎵</td><td>HG#05</td><td>Sound the Trumpet</td>
+<td></td><td>festive triumphant</td><td>128</td>
+<td>🎵song_05_sound_the_trumpet.mp3</td>
+<td>—</td>
+<td>—</td></tr>
+<tr>
+<td>🎵</td><td>HG#06</td><td>No Weapon Stands</td>
+<td></td><td>steadfast bold</td><td>96</td>
+<td>🎵song_06_no_weapon_stands.mp3</td>
+<td>—</td>
+<td>—</td></tr>
+<tr>
+<td>🎵</td><td>HG#07</td><td>Heaven's Host</td>
+<td></td><td>majestic luminous</td><td>110</td>
+<td>🎵song_07_heaven's_host.mp3</td>
+<td>—</td>
+<td>—</td></tr>
+<tr>
+<td>🎵</td><td>HG#08</td><td>The Archangel's Sword</td>
+<td></td><td>dramatic resolved</td><td>84</td>
+<td>🎵song_08_the_archangel's_sword.mp3</td>
+<td>—</td>
+<td>—</td></tr>
+<tr>
+<td>🎵</td><td>HG#09</td><td>Stand Firm</td>
+<td></td><td>tender strengthening</td><td>68</td>
+<td>🎵song_09_stand_firm.mp3</td>
+<td>—</td>
+<td>—</td></tr>
+<tr>
+<td>🎵</td><td>HG#10</td><td>Glory Everlasting</td>
+<td></td><td>hopeful grand</td><td>90</td>
+<td>🎵song_10_glory_everlasting.mp3</td>
+<td>—</td>
+<td>—</td></tr>
 </tbody></table>
+<script>
+function f(s){var r=document.getElementById('t').rows;for(var i=1;i<r.length;i++){var id=r[i].cells[1].textContent;var show=s=='all'||id.indexOf(s)===0;r[i].style.display=show?'':'none';}}
+</script>
 </body></html>
