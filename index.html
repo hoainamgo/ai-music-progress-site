@@ -1,7 +1,9 @@
 <!doctype html><html lang="vi"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI Music Project — Progress</title>
-<meta http-equiv="refresh" content="30">
+<title>AI Music Project — Progress & Release</title>
+<meta name="description" content="AI Pop-R&B music project — 200 songs (Suno/Mureka), thumbnails, YouTube & Shorts release tracker.">
+<meta name="keywords" content="AI music, Pop-R&B, Suno, Mureka, YouTube music, AI thumbnail">
+<meta http-equiv="refresh" content="60">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;background:#0f0e17;color:#e7e7ee;padding:24px}
@@ -12,6 +14,7 @@ h1{font-size:22px;background:linear-gradient(90deg,#7c5cff,#ff7eb6);-webkit-back
 @media(max-width:760px){.wrap{grid-template-columns:1fr}}
 .card{background:#1a1925;border:1px solid #2a2940;border-radius:14px;padding:18px}
 h2{font-size:16px;margin-bottom:14px;color:#fff}
+h2 .badge{font-size:11px;background:#2a2940;padding:2px 8px;border-radius:8px;color:#9a9ab0;margin-left:8px}
 .stats{display:flex;gap:14px;margin-bottom:16px;flex-wrap:wrap}
 .stat{background:#23223a;border-radius:10px;padding:10px 14px;min-width:90px}
 .stat span{display:block;font-size:20px;font-weight:700;color:#fff}
@@ -21,41 +24,78 @@ h2{font-size:16px;margin-bottom:14px;color:#fff}
 .bar{height:10px;background:#23223a;border-radius:6px;overflow:hidden}
 .fill{height:100%;border-radius:6px}
 .prog small{font-size:12px;color:#cfcfe6}
-details{margin-top:12px}
-summary{cursor:pointer;font-size:13px;color:#7c5cff}
-.themes{list-style:none;margin-top:8px;columns:2;font-size:12px}
-.themes li{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid #23223a}
-.themes span{color:#9a9ab0}
 .overall{background:#1a1925;border:1px solid #2a2940;border-radius:14px;padding:16px;margin-bottom:18px;text-align:center}
 .overall b{font-size:28px;color:#fff}
-footer{margin-top:20px;font-size:12px;color:#6a6a85;text-align:center}
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:10px}
+.thumb{background:#23223a;border-radius:10px;overflow:hidden;border:1px solid #2a2940}
+.thumb img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.thumb p{font-size:11px;padding:6px 8px;color:#9a9ab0}
+/* video/shorts slots */
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:10px}
+.slot{background:linear-gradient(135deg,#1a1925,#23223a);border:1px dashed #3a3955;border-radius:12px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#6a6a85;font-size:12px;text-align:center;padding:10px}
+.slot b{color:#9a9ab0;font-size:13px;margin-bottom:4px}
+.slot .tag{font-size:10px;background:#2a2940;padding:2px 6px;border-radius:6px;margin-top:6px}
+footer{margin-top:20px;font-size:12px;color:#6a6a85;text-align:center;line-height:1.8}
 a{color:#7c5cff}
 </style></head><body>
-<header><h1>🎵 AI Music Project — Progress Tracker</h1>
+<header><h1>🎵 AI Music Project — Progress & Release</h1>
 <div class="meta" id="upd">Loading...</div></header>
 <div class="overall" id="ov">Tổng tiến độ: <b id="ovn">...</b></div>
-<div class="wrap" id="wrap"></div>
-<footer>Drive: <a href="https://drive.google.com/drive/folders/1Mi4H7-iRGbncp_kL7dm7Wh6BfoIUdDC6">AI_Music_Project</a>
-· Powered by Mai 💜</footer>
+
+<div class="wrap">
+  <div class="card"><h2>📊 Progress <span class="badge">auto-refresh 60s</span></h2><div id="prog"></div></div>
+  <div class="card"><h2>🖼️ Thumbnails (Session 2) <span class="badge">Flux-4B · Drive</span></h2>
+    <div class="gallery" id="gal"></div></div>
+</div>
+
+<div class="card" style="margin-top:18px"><h2>📺 YouTube Videos <span class="badge">slot trống — chờ upload</span></h2>
+  <div class="slots" id="vids"></div></div>
+
+<div class="card" style="margin-top:18px"><h2>📱 YouTube Shorts <span class="badge">slot trống — chờ upload</span></h2>
+  <div class="slots" id="shorts"></div></div>
+
+<footer>
+Drive: <a href="https://drive.google.com/drive/folders/1Mi4H7-iRGbncp_kL7dm7Wh6BfoIUdDC6">AI_Music_Project</a>
+· Thumbnails: <a href="https://drive.google.com/drive/folders/1hlM-mtd2WYgbLYgm4yMbkEcuDm93PLSi">Images/YouTube</a>
+· Skills: <a href="https://github.com/hoainamgo/music-youtube-thumbnail">music-youtube-thumbnail</a>
+<br>Powered by Mai 💜 · SEO-ready · 200 songs planned (S1+S2 × 100)</footer>
+
 <script>
 const C1='#7c5cff',C2='#ff7eb6';
+const DRIVE_IMG='https://drive.google.com/thumbnail?id='; // placeholder; fill with real file ids
+// Map S2#1-10 -> Drive file ids (Images/YouTube)
+const THUMBS=[
+ {id:'18Fb7ogdNpV8upj9WUQBpdyZDPkVyRylF',t:'#01 Stumbling First Words'},
+ {id:'1CiMpKEkDWzNREFf-hnUOsW_iYdKn79Qi',t:'#02 A Thousand Miles of Messages'},
+ {id:'1BnXCndeQ80pwY6MEK7WhdlOnM22HV2Kz',t:'#03 Sorry At the Door'},
+ {id:'1L_xBukFfnJvfw4aozq-0oOeb_IcH4zWj',t:'#04 Your Eyes Wrote My Name'},
+ {id:'1-IBjZLqEZoZE3Q7p-Q0tZQhZYX2cbxSL',t:'#05 Kisses Taste Like Rain'},
+ {id:'1xegScyh04_-wKaWbo6OdbgUDQgVhx7rQ',t:'#06 Still Your Hand at Eighty'},
+ {id:'1exEANAcCU1PyOt7Ui7EM1a7PbJTuOZov',t:'#07 I Never Said Your Name'},
+ {id:'1lE1SiRHdiqlzUOjv9skldMnpp6dozCMO',t:'#08 Round Two Feels Like Fire'},
+ {id:'1FVHP2dpEt_kKqwlvZae0GXOr4nZ1C8my',t:'#09 You Taught Me Me'},
+ {id:'19r_i2YTsUkozzMES2BMVNuHxTSBJ94rQ',t:'#10 Pages Smell Like Us'},
+];
 function bar(p,c){return `<div class="bar"><div class="fill" style="width:${p}%;background:${c}"></div></div>`}
-function themes(o){return Object.entries(o).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<li><span>${k}</span><b>${v}</b></li>`).join('')}
+function renderGal(){document.getElementById('gal').innerHTML=THUMBS.map(x=>
+  `<div class="thumb"><img loading="lazy" src="${DRIVE_IMG}${x.id}" alt="${x.t}" onerror="this.style.opacity=.3">
+  <p>${x.t}</p></div>`).join('');}
+function renderSlots(el,n){let h='';for(let i=1;i<=n;i++){h+=`<div class="slot"><b>${el} #${i}</b><span>🔜 chờ video</span><span class="tag">${el}</span></div>`}
+  document.getElementById(el==='Video'? 'vids':'shorts').innerHTML=h;}
 fetch('./progress_data.json').then(r=>r.json()).then(d=>{
-  document.getElementById('upd').textContent='Cập nhật: '+d.updated+' · Auto-refresh 30s';
+  document.getElementById('upd').textContent='Cập nhật: '+d.updated+' · Auto-refresh 60s';
   const all=d.sessions.reduce((a,s)=>({g:a.g+s.gen,t:a.t+s.total}),{g:0,t:0});
   document.getElementById('ovn').textContent=all.g+'/'+all.t+' ('+Math.round(100*all.g/all.t)+'%)';
-  document.getElementById('wrap').innerHTML=d.sessions.map((s,i)=>{
+  document.getElementById('prog').innerHTML=d.sessions.map((s,i)=>{
     const c=i===0?C1:C2;
-    return `<div class="card"><h2>${s.label}</h2>
-      <div class="stats">
-        <div class="stat"><span>${s.gen}/${s.total}</span><label>Đã sinh (mureka-7.5)</label></div>
-        <div class="stat"><span>${s.dl}/${s.total}</span><label>Đã download</label></div>
-        <div class="stat"><span>${s.lang}</span><label>Ngôn ngữ</label></div></div>
-      <div class="prog"><label>Tiến độ sinh</label>${bar(s.pct,c)}<small>${s.pct}%</small></div>
-      <div class="prog"><label>Tiến độ download</label>${bar(s.dl_pct,'#36d399')}<small>${s.dl_pct}%</small></div>
-      <details><summary>Theme breakdown (${Object.keys(s.themes).length} themes)</summary>
-      <ul class="themes">${themes(s.themes)}</ul></details></div>`;
-  }).join('');
-}).catch(e=>{document.getElementById('upd').textContent='Lỗi tải dữ liệu';});
+    return `<div class="stats">
+      <div class="stat"><span>${s.gen}/${s.total}</span><label>Đã sinh</label></div>
+      <div class="stat"><span>${s.dl}/${s.total}</span><label>Download</label></div>
+      <div class="stat"><span>${s.lang}</span><label>Ngôn ngữ</label></div></div>
+    <div class="prog"><label>Tiến độ sinh</label>${bar(s.pct,c)}<small>${s.pct}%</small></div>
+    <div class="prog"><label>Tiến độ download</label>${bar(s.dl_pct,'#36d399')}<small>${s.dl_pct}%</small></div>`;
+  }).join('<hr style="border:none;border-top:1px solid #23223a;margin:12px 0">');
+  renderGal();renderSlots('Video',10);renderSlots('Short',10);
+}).catch(e=>{document.getElementById('upd').textContent='Lỗi tải dữ liệu';renderGal();renderSlots('Video',10);renderSlots('Short',10);});
 </script></body></html>
