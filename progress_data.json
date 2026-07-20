@@ -1732,8 +1732,8 @@
       "audio_file": "song_002_relay_test.mp3",
       "thumb": true,
       "thumb_file": "thumb_s2_02_nano.jpeg",
-      "video": false,
-      "video_file": ""
+      "video": true,
+      "video_file": "S2-02_sunset_train_a_thousand_miles_of_messages.mp4"
     },
     {
       "n": 3,
@@ -1749,8 +1749,8 @@
       "audio_file": "song_003_mureka-7.5.mp3",
       "thumb": true,
       "thumb_file": "thumb_s2_03_nano.jpeg",
-      "video": false,
-      "video_file": ""
+      "video": true,
+      "video_file": "S2-03_rainy_window_sorry_at_the_door.mp4"
     },
     {
       "n": 4,
@@ -1766,8 +1766,8 @@
       "audio_file": "song_004_mureka-7.5.mp3",
       "thumb": true,
       "thumb_file": "thumb_s2_04_nano.jpeg",
-      "video": false,
-      "video_file": ""
+      "video": true,
+      "video_file": "S2-04_magic_library_your_eyes_wrote_my_name.mp4"
     },
     {
       "n": 5,
@@ -1783,8 +1783,8 @@
       "audio_file": "song_005_mureka-7.5.mp3",
       "thumb": true,
       "thumb_file": "thumb_s2_05_nano.jpeg",
-      "video": false,
-      "video_file": ""
+      "video": true,
+      "video_file": "S2-05_cyberpunk_rain_kisses_taste_like_rain.mp4"
     },
     {
       "n": 6,
@@ -1800,8 +1800,8 @@
       "audio_file": "song_006_mureka-7.5.mp3",
       "thumb": true,
       "thumb_file": "thumb_s2_06_nano.jpeg",
-      "video": false,
-      "video_file": ""
+      "video": true,
+      "video_file": "S2-06_forest_sunrise_still_your_hand_at_eighty.mp4"
     },
     {
       "n": 7,
@@ -1817,8 +1817,8 @@
       "audio_file": "song_007_mureka-7.5.mp3",
       "thumb": true,
       "thumb_file": "thumb_s2_07_nano.jpeg",
-      "video": false,
-      "video_file": ""
+      "video": true,
+      "video_file": "S2-07_deep_sea_i_never_said_your_name.mp4"
     },
     {
       "n": 8,
@@ -1834,8 +1834,8 @@
       "audio_file": "song_008_mureka-7.5.mp3",
       "thumb": true,
       "thumb_file": "thumb_s2_08_nano.jpeg",
-      "video": false,
-      "video_file": ""
+      "video": true,
+      "video_file": "S2-08_black_coast_round_two_feels_like_fire.mp4"
     },
     {
       "n": 9,
@@ -1851,8 +1851,8 @@
       "audio_file": "song_009_mureka-7.5.mp3",
       "thumb": true,
       "thumb_file": "thumb_s2_09_nano.jpeg",
-      "video": false,
-      "video_file": ""
+      "video": true,
+      "video_file": "S2-09_rainy_window_you_taught_me_me.mp4"
     },
     {
       "n": 10,
@@ -1868,8 +1868,8 @@
       "audio_file": "song_010_mureka-7.5.mp3",
       "thumb": true,
       "thumb_file": "thumb_s2_10_nano.jpeg",
-      "video": false,
-      "video_file": ""
+      "video": true,
+      "video_file": "S2-10_sunset_train_pages_smell_like_us.mp4"
     },
     {
       "n": 11,
@@ -3414,6 +3414,6 @@
   "counts": {
     "audio": 11,
     "thumb": 10,
-    "video": 1
+    "video": 10
   }
 }
